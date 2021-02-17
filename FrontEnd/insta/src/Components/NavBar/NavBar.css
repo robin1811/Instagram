@@ -1,0 +1,42 @@
+.navbar{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 70px;
+    /* margin-top: 1rem; */
+    background: white;
+}
+
+.nav.logo{
+    flex : 1 1 20rem;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.logo img{
+
+}
+
+.nav.search-box {
+    flex : 1 1 25rem;
+    display: flex;
+    justify-content: center;
+    /* transform: translateX(-10%); */
+}
+.nav.search-box input{
+    
+}
+
+.nav.links{
+    width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex : 1 1 15rem;
+    cursor: pointer;
+}
+
+.nav.links div {
+
+}

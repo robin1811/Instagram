@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+
+    <!-- React Logic -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <!-- Platform Specific Code -->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel ----- compiler to convert JSX code to JS -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- bootstrap -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">
+
+    class Counter extends React.Component {
+        constructor() {
+            super();
+            this.state = {
+                count: 0
+            }
+        }
+        increment = () => {
+            this.setState({
+                count: this.state.count + 1
+            })
+        }
+        decrement = () => {
+            this.setState({
+                count: this.state.count - 1
+            })
+        }
+        reset = () => {
+            this.setState({
+                count: 0
+            })
+        }
+        // d-flex justify-content-center
+        render() {
+            return <React.Fragment>
+                <div className="container mt-5 mb-5">
+                    <p className="btn btn-success d-block">{this.state.count}</p>
+                    <div className="">
+                        <button className="btn btn-primary float-start btn-lg" onClick={this.increment} >+</button>
+                        <button className="btn btn-danger float-start btn-lg mx-5" onClick={this.decrement} >-</button>
+                        <button className="btn btn-warning float-end btn-lg" onClick={this.reset}>Reset</button>
+                    </div>   
+                </div>
+            </React.Fragment>
+        }
+
+    }
+
+    ReactDOM.render(<Counter />, document.getElementById("root"));
+</script>
+
+</html>

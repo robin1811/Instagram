@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Demo</title>
+
+    <!-- React Logic -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <!-- Platform Specific Code -->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel ----- compiler to convert JSX code to JS -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+<script type="text/babel">
+    let names = ["Steve", "tony" , "Natasha", "bruce" , "thanos"];
+    // React Ka Code : 
+    // JSX => JavaScript
+
+    // functional component => component name always starts with capital letter
+    // props
+    function Hello(props){
+        return <h1> Hello From {props.name} </h1>
+    }
+
+    function HelloParent(){
+        return <React.Fragment>
+                {names.map(function(name){
+                    return <Hello name = {name}/>
+                })}
+            </React.Fragment>
+    }
+
+    ReactDOM.render( <HelloParent/> , document.getElementById("root"));
+        // React.createElement("h1", null, "Hello from React")
+</script>
+
+</html>
